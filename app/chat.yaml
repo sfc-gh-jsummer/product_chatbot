@@ -1,0 +1,35 @@
+spec:
+  containers:
+  - name: chat
+    image: sfpscogs-scs.registry.snowflakecomputing.com/jsummer/catalog/images/chat
+    env:
+      SNOWFLAKE_MOUNTED_STAGE_PATH: stage
+      WEAVIATE_URL: http://weaviate:8080
+      INDEX_NAME: Product
+      TEXT_KEY: dESCRIPTION
+      PRODUCT_ID: pRODUCT_NAME
+      MODEL_NAME: openchat35
+      PRODUCT_TABLE: DESCRIBER_RESULTS
+      SNOW_ROLE: SCS_ROLE
+      SNOW_DATABASE: JSUMMER
+      SNOW_SCHEMA: CATALOG
+      SNOW_WAREHOUSE: WH_XS
+      CHAT_LOG_TABLE: CHAT_LOG_TABLE
+    volumeMounts:
+    - name: stage
+      mountPath: /workspace/stage
+  endpoints:
+  - name: jupyter
+    port: 8888
+    public: true
+  - name: streamlit
+    port: 8501
+    public: true
+  - name: streamlitdev
+    port: 8502
+    public: true
+  volumes:
+  - name: stage
+    source: '@SNOW_AI_FILES'
+    uid: 1000
+    gid: 1000

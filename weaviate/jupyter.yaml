@@ -1,0 +1,23 @@
+spec:
+  containers:
+  - name: jupyter
+    image: sfpscogs-scs.registry.snowflakecomputing.com/jsummer/catalog/images/jupyter
+    env:
+      SNOWFLAKE_MOUNTED_STAGE_PATH: stage
+      SNOW_ROLE: SCS_ROLE
+      SNOW_WAREHOUSE: WH_XS
+      SNOW_DATABASE: JSUMMER
+      SNOW_SCHEMA: CATALOG
+      WEAVIATE_URL: http://weaviate:8080
+    volumeMounts:
+    - name: stage
+      mountPath: /workspace/stage
+  endpoints:
+  - name: jupyter
+    port: 8888
+    public: true
+  volumes:
+  - name: stage
+    source: '@SNOW_AI_FILES'
+    uid: 1000
+    gid: 1000

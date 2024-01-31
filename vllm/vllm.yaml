@@ -1,0 +1,31 @@
+spec:
+  containers:
+  - name: vllm
+    image: sfpscogs-scs.registry.snowflakecomputing.com/jsummer/catalog/images/vllm
+    env:
+      HUGGINGFACE_TOKEN: CHANGE_ME
+      LLM_MODEL: openchat/openchat-3.5-1210
+      MODEL_NAME: openchat35
+      OPENAI_API_BASE: http://localhost:8000/v1
+    resources:
+      requests:
+        nvidia.com/gpu: 1
+      limits:
+        nvidia.com/gpu: 1
+    volumeMounts:
+    - name: stage
+      mountPath: /workspace/stage
+  endpoints:
+  - name: api
+    port: 8000
+    public: true
+  - name: jupyter
+    port: 8888
+    public: true
+  volumes:
+  - name: stage
+    source: '@SNOW_AI_FILES'
+    uid: 1000
+    gid: 1000
+  networkPolicyConfig:
+    allowInternetEgress: true

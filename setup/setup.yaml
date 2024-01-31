@@ -1,0 +1,14 @@
+# Set account-based constants
+HUGGINGFACE_TOKEN: 'CHANGE_ME'
+FILES_STAGE: SNOW_AI_FILES # Sandbox directory for notebooks and other development docs
+SPEC_STAGE: SNOW_AI_SPECS # Stage to hold Kubernetes pod spec yaml files
+UDF_STAGE: SNOW_AI_UDFS # Stage to register UDFs (used in describer/)
+DATA_STAGE: SNOW_AI_DATA # Stage to store weaviate data
+IMAGE_REPOSITORY: IMAGES
+SNOW_ROLE: SCS_ROLE
+SNOW_DATABASE: JSUMMER
+SNOW_SCHEMA: CATALOG
+SNOW_WAREHOUSE: WH_XS
+SOURCE_TABLE: PRODUCTS # Product metadata table
+SOURCE_TABLE_ID: pRODUCT_NAME # Product metadata table ID column; Weaviate will lowercase first letter
+CHAT_LOG_TABLE: CHAT_LOG_TABLE # Table to store chat logs

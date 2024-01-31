@@ -1,0 +1,25 @@
+spec:
+  containers:
+  - name: text2vec
+    image: sfpscogs-scs.registry.snowflakecomputing.com/jsummer/catalog/images/text2vec
+    env:
+      SNOWFLAKE_MOUNTED_STAGE_PATH: stage
+      NVIDIA_VISIBLE_DEVICES: all
+      ENABLE_CUDA: 1
+    volumeMounts:
+    - name: stage
+      mountPath: /workspace/stage
+    resources:
+      requests:
+        nvidia.com/gpu: 1
+      limits:
+        nvidia.com/gpu: 1
+  endpoints:
+  - name: text2vec
+    port: 8080
+    public: true
+  volumes:
+  - name: data
+    source: '@SNOW_AI_DATA'
+  - name: stage
+    source: '@SNOW_AI_FILES'

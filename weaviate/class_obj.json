@@ -1,0 +1,125 @@
+{
+    "class": "Product",
+    "vectorIndexType": "hnsw",
+    "vectorizer": "text2vec-transformers",
+    "description": "product reward offerings",
+    "properties": [
+        {
+            "name": "ORGANIZATION_NAME",
+            "dataType": [
+                "text"
+            ],
+            "description": "Company offering reward",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "PRODUCT_NAME",
+            "dataType": [
+                "text"
+            ],
+            "description": "Name of product",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "PRODUCT_CATEGORY",
+            "dataType": [
+                "text"
+            ],
+            "description": "Category of product",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "PRODUCT_DESCRIPTION",
+            "dataType": [
+                "text"
+            ],
+            "description": "Description of product",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "REWARD",
+            "dataType": [
+                "text"
+            ],
+            "description": "Dollar value of reward",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "QUALIFICATION",
+            "dataType": [
+                "text"
+            ],
+            "description": "How to qualify for reward",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "HYPERLINK",
+            "dataType": [
+                "text"
+            ],
+            "description": "URL to reward website",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "REWARD_TYPE",
+            "dataType": [
+                "text"
+            ],
+            "description": "Type of reward",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": true,
+              "vectorizePropertyName": true
+            }
+          }
+        },
+        {
+            "name": "DESCRIPTION",
+            "dataType": [
+                "text"
+            ],
+            "description": "Reward summary",
+            "moduleConfig": {
+            "text2vec-transformers": {
+              "skip": false,
+              "vectorizePropertyName": true
+            }
+          }
+        }
+    ]
+}
