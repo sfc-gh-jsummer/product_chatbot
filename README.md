@@ -155,7 +155,7 @@ When building these 3 docker images, ensure the Dockerfile and name are correctl
 Next, open a SQL Worksheet in Snowsight and set the context to the original role, database, and schema specified in `setup/setup.yaml`. Run the below commands in the SQL Worksheet.
 
 ```
-set mycomment = '{"origin": "sf_sit", "name": "product_chatbot","version": {"major": 1, "minor": 1}, "solution_family": "spcs"}';
+set mycomment = '{"origin": "sf_sit", "name": "oss_chatbot","version": {"major": 1, "minor": 1}, "solution_family": "spcs"}';
 
 create service TEXT2VEC 
 in compute pool <pool_name> -- Set to compute pool of >= GPU_NV_S
